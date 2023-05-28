@@ -8,19 +8,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
 
 @Entity
 @Table
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class Empresa {
+public class ContratoVeiculo {
     @Id
     @GeneratedValue
-    private Long id;
-    private String nome;
-    private String cnpj;
-    private Endereco endereco;
-
+    private Veiculo veiculo;
+    private LocalDate dataInicio;
+    private LocalDate dataFinal;
 }
-

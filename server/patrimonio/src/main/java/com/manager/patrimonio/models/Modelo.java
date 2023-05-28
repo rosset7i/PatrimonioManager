@@ -14,13 +14,10 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class Empresa {
+public class Modelo {
     @Id
     @GeneratedValue
     private Long id;
     private String nome;
-    private String cnpj;
-    private Endereco endereco;
-
+    private Marca marca;
 }
-
