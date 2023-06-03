@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -21,4 +19,6 @@ public class Imovel {
     private String nome;
     private String endereco;
     private String descricao;
+    @OneToMany(mappedBy = "imovel")
+    private List<ContratoImovel> contratoImovel;
 }

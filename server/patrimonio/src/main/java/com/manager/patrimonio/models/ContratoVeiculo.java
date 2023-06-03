@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -20,6 +17,8 @@ public class ContratoVeiculo {
     @GeneratedValue
     private Long id;
     private String nome;
+
+    @OneToOne
     private Veiculo veiculo;
     private LocalDate dataInicio;
     private LocalDate dataFinal;

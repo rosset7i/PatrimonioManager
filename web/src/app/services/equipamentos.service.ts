@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ContratoOutput} from "../models/contrato-output";
+import {EquipamentoOutput} from "../models/equipamento-output";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class EquipamentoService {
   constructor(private httpClient: HttpClient) { }
 
   getAllEquipamentos(){
-    return this.httpClient.get(this.baseUrl);
+    return this.httpClient.get<EquipamentoOutput[]>(this.baseUrl);
   }
 
   createEquipamentos(contatoInput: ContratoOutput){

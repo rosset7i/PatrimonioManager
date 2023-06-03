@@ -11,7 +11,7 @@ export class ContratoService {
   constructor(private httpClient: HttpClient) { }
 
   getAllContratos(){
-    return this.httpClient.get(this.baseUrl);
+    return this.httpClient.get<ContratoOutput[]>(this.baseUrl);
   }
 
   createContrato(contatoInput: ContratoOutput){

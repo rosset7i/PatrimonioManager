@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ContratoOutput} from "../models/contrato-output";
+import {ImovelOutput} from "../models/imovel-output";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ImovelService {
   constructor(private httpClient: HttpClient) { }
 
   getAllImoveis(){
-    return this.httpClient.get(this.baseUrl);
+    return this.httpClient.get<ImovelOutput[]>(this.baseUrl);
   }
 
   createImovel(contatoInput: ContratoOutput){

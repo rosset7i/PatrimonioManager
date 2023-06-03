@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ContratoOutput} from "../models/contrato-output";
+import {VeiculoOutput} from "../models/veiculo-output";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class VeiculoService {
   constructor(private httpClient: HttpClient) { }
 
   getAllVeiculos(){
-    return this.httpClient.get(this.baseUrl);
+    return this.httpClient.get<VeiculoOutput[]>(this.baseUrl);
   }
 
   createVeiculo(contatoInput: ContratoOutput){
