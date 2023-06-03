@@ -20,6 +20,6 @@ public class Veiculo {
     private Long id;
     private int ano;
     private String placa;
-    private Modelo modelo;
+    private String modelo;
 }
 

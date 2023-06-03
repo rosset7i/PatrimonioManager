@@ -20,7 +20,7 @@ public class Empresa {
     private Long id;
     private String nome;
     private String cnpj;
-    private Endereco endereco;
+    private String endereco;
 
 }
 

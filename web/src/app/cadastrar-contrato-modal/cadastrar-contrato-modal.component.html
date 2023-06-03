@@ -1,0 +1,61 @@
+<div>
+  <h1 mat-dialog-title>Adicionar Contrato de {{modalTitle}}</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-file-text"></i>
+      </span>
+        <input class="form-control"
+               formControlName="nome"
+               placeholder="Nome do Contrato"
+               type="text">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+        <i class="bi bi-file-plus"></i>
+      </span>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-calendar"></i>
+        </span>
+        <input class="form-control"
+               formControlName="dataInicio"
+               placeholder="Data Inicio"
+               type="date">
+      </div>
+
+      <div class="input-group mb-3">
+      <span class="input-group-text">
+        <i class="bi bi-calendar"></i>
+      </span>
+        <input
+          class="form-control"
+          formControlName="dataFinal"
+          placeholder="Data Final"
+          type="date">
+      </div>
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      (click)="saveContato()"
+      [disabled]="!canSave"
+      class="btn btn-dark m-1">
+      Salvar
+    </button>
+    <button class="btn btn-danger m-1" mat-dialog-close>
+      Cancelar
+    </button>
+  </div>
+</div>

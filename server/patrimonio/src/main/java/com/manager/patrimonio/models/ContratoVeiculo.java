@@ -18,6 +18,8 @@ import java.time.LocalDate;
 public class ContratoVeiculo {
     @Id
     @GeneratedValue
+    private Long id;
+    private String nome;
     private Veiculo veiculo;
     private LocalDate dataInicio;
     private LocalDate dataFinal;

@@ -18,6 +18,7 @@ import java.time.LocalDate;
 public class Equipamento {
     @Id
     @GeneratedValue
+    private Long id;
     private String nome;
     private String descricao;
     private LocalDate dataAquisicao;

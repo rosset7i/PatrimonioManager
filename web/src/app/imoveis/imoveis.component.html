@@ -1,1 +1,30 @@
-<p>imoveis works!</p>
+<div class="dropdown">
+  <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
+    Adicionar novo
+  </button>
+  <ul class="dropdown-menu">
+    <li><button class="dropdown-item" (click)="openCreateModal(actions.Equipamento)">Contrato de Equipamento</button></li>
+    <li><button class="dropdown-item" (click)="openCreateModal(actions.Imovel)">Contrato de Imovel</button></li>
+    <li><button class="dropdown-item" (click)="openCreateModal(actions.Veiculo)">Contrato de Veiculo</button></li>
+  </ul>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Nome</th>
+    <th scope="col">Data Inicio Vigencia</th>
+    <th scope="col">Data Fim Vigencia</th>
+    <th scope="col">Tipo</th>
+    <th scope="col">Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+    <td>@mdo</td>
+  </tr>
+  </tbody>
+</table>
