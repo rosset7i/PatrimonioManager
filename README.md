@@ -1,7 +1,7 @@
 # PatrimonioManager
 
 Alunos: 
-Matheus Henrique Custodio Rossetti
+Matheus Henrique Custodio Rossetti /
 Vinicius Maier
 
 Passos para rodar:
