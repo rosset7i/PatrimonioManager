@@ -5,24 +5,24 @@ import {ContratoOutput} from "../models/contrato-output";
 @Injectable({
   providedIn: 'root'
 })
-export class ContratoService {
-  private readonly baseUrl = 'api/v1/contratos';
+export class VeiculoService {
+  private readonly baseUrl = 'api/v1/veiculos';
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllContratos(){
+  getAllVeiculos(){
     return this.httpClient.get(this.baseUrl);
   }
 
-  createContrato(contatoInput: ContratoOutput){
+  createVeiculo(contatoInput: ContratoOutput){
     return this.httpClient.post(this.baseUrl, contatoInput);
   }
 
-  updateContrato(contratoInput: ContratoOutput){
+  updateVeiculo(contratoInput: ContratoOutput){
     return this.httpClient.put(this.baseUrl, contratoInput);
   }
 
-  deleteContrato(id: number){
+  deleteVeiculo(id: number){
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 }

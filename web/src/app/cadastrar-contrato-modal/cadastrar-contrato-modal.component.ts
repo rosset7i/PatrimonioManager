@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {ContratoOutput} from "../models/contrato-model";
+import {ContratoOutput} from "../models/contrato-output";
 import {ContratoService} from "../services/contrato.service";
 import {ModalActions} from "../models/actions";
 
@@ -44,7 +44,7 @@ export class CadastrarContratoModalComponent implements OnInit{
     this.form = this.formBuilder.group({
       nome: [null, Validators.required],
       idAgregado: [null, Validators.required],
-      dataInicio: [null, Validators.email],
+      dataInicio: [null, Validators.required],
       dataFinal: [null, Validators.required],
     });
 

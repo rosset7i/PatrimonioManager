@@ -1,7 +1,7 @@
 export interface ContratoOutput{
   id: number;
   nome: string;
-  idAgregado: number;
+  agregado: any;
   dataInicio: Date;
   dataFinal: Date;
 }
