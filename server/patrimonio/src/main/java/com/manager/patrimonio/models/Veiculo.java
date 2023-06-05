@@ -1,11 +1,13 @@
 package com.manager.patrimonio.models;
 
+import com.manager.patrimonio.dtos.VeiculoOutput;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table
@@ -21,5 +23,20 @@ public class Veiculo {
     private String modelo;
     @OneToMany(mappedBy = "veiculo")
     private List<ContratoVeiculo> contratoVeiculo;
+
+    public static VeiculoOutput convertToOutput(Veiculo veiculo){
+        return VeiculoOutput.builder()
+                .id(veiculo.getId())
+                .ano(veiculo.getAno())
+                .placa(veiculo.getPlaca())
+                .modelo(veiculo.getModelo())
+                .build();
+    }
+
+    public static List<VeiculoOutput> convertToOutputList(List<Veiculo> veiculo){
+        return veiculo.stream()
+                .map(Veiculo::convertToOutput)
+                .collect(Collectors.toList());
+    }
 }
 
