@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {ContratoOutput} from "../models/contrato-output";
 import {EquipamentoOutput} from "../models/equipamento-output";
 
 @Injectable({
@@ -15,12 +14,12 @@ export class EquipamentoService {
     return this.httpClient.get<EquipamentoOutput[]>(this.baseUrl);
   }
 
-  createEquipamentos(contatoInput: ContratoOutput){
-    return this.httpClient.post(this.baseUrl, contatoInput);
+  createEquipamentos(equipamentoOutput: EquipamentoOutput){
+    return this.httpClient.post(this.baseUrl, equipamentoOutput);
   }
 
-  updateEquipamentos(contratoInput: ContratoOutput){
-    return this.httpClient.put(this.baseUrl, contratoInput);
+  updateEquipamentos(equipamentoOutput: EquipamentoOutput){
+    return this.httpClient.put(this.baseUrl, equipamentoOutput);
   }
 
   deleteEquipamento(id: number){

@@ -1,0 +1,49 @@
+<div>
+  <h1 mat-dialog-title>Imovel</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-file-text"></i>
+      </span>
+        <input class="form-control"
+               formControlName="nome"
+               placeholder="Nome do Imovel"
+               type="text">
+      </div>
+
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-text-center"></i>
+      </span>
+        <input class="form-control"
+               formControlName="descricao"
+               placeholder="Descrição"
+               type="text">
+      </div>
+
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-house"></i>
+      </span>
+        <input class="form-control"
+               formControlName="endereco"
+               placeholder="Endereço"
+               type="text">
+      </div>
+
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      (click)="saveImovel()"
+      [disabled]="!canSave"
+      class="btn btn-dark m-1">
+      Salvar
+    </button>
+    <button class="btn btn-danger m-1" mat-dialog-close>
+      Cancelar
+    </button>
+  </div>
+</div>

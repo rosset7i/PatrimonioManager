@@ -1,6 +1,10 @@
 package com.manager.patrimonio.dtos;
 
 import com.manager.patrimonio.enums.TipoContrato;
+import com.manager.patrimonio.models.Contrato;
+import com.manager.patrimonio.models.Equipamento;
+import com.manager.patrimonio.models.Imovel;
+import com.manager.patrimonio.models.Veiculo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,10 +16,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Builder
 @Getter
-public class ContratoOutput {
+public class CreateOrUpdateContratoInput {
     private Long id;
     private String nome;
-    private String nomeAgregado;
+    private Long veiculo;
+    private Long equipamento;
+    private Long imovel;
     private LocalDate dataInicio;
     private LocalDate dataFinal;
     private TipoContrato tipoContrato;

@@ -22,7 +22,7 @@ public class Veiculo {
     private String placa;
     private String modelo;
     @OneToMany(mappedBy = "veiculo")
-    private List<ContratoVeiculo> contratoVeiculo;
+    private List<Contrato> contratos;
 
     public static VeiculoOutput convertToOutput(Veiculo veiculo){
         return VeiculoOutput.builder()

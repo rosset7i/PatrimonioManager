@@ -22,7 +22,7 @@ public class Imovel {
     private String endereco;
     private String descricao;
     @OneToMany(mappedBy = "imovel")
-    private List<ContratoImovel> contratoImovel;
+    private List<Contrato> contratos;
 
     public static ImovelOutput convertToOutput(Imovel imovel){
         return ImovelOutput.builder()

@@ -23,7 +23,7 @@ public class Equipamento {
     private String descricao;
     private LocalDate dataAquisicao;
     @OneToMany(mappedBy = "equipamento")
-    private List<ContratoEquipamento> contratoEquipamento;
+    private List<Contrato> contratos;
 
     public static EquipamentoOutput convertToOutput(Equipamento equipamento){
         return EquipamentoOutput.builder()

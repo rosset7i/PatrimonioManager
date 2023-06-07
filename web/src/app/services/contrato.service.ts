@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ContratoOutput} from "../models/contrato-output";
+import {CreateOrUpdateContatoInput} from "../models/create-contato-output";
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,11 @@ export class ContratoService {
     return this.httpClient.get<ContratoOutput[]>(this.baseUrl);
   }
 
-  createContrato(contatoInput: ContratoOutput){
+  createContrato(contatoInput: CreateOrUpdateContatoInput){
     return this.httpClient.post(this.baseUrl, contatoInput);
   }
 
-  updateContrato(contratoInput: ContratoOutput){
+  updateContrato(contratoInput: CreateOrUpdateContatoInput){
     return this.httpClient.put(this.baseUrl, contratoInput);
   }
 

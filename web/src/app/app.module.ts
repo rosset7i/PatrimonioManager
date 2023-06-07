@@ -13,6 +13,9 @@ import { CadastrarContratoModalComponent } from './cadastrar-contrato-modal/cada
 import {MatDialogModule} from "@angular/material/dialog";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { CadastrarImovelComponent } from './cadastrar-imovel/cadastrar-imovel.component';
+import { CadastrarVeiculoComponent } from './cadastrar-veiculo/cadastrar-veiculo.component';
+import { CadastrarEquipamentoComponent } from './cadastrar-equipamento/cadastrar-equipamento.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import {HttpClientModule} from "@angular/common/http";
     ImoveisComponent,
     EquipamentosComponent,
     VeiculosComponent,
-    CadastrarContratoModalComponent
+    CadastrarContratoModalComponent,
+    CadastrarImovelComponent,
+    CadastrarVeiculoComponent,
+    CadastrarEquipamentoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,11 @@
 import {TipoContrato} from "./tipo-contrato";
 
-export interface ContratoOutput{
+export interface CreateOrUpdateContatoInput{
   id: number;
   nome: string;
-  nomeAgregado: string;
+  veiculo: number;
+  equipamento: number;
+  imovel: number;
   dataInicio: Date;
   dataFinal: Date;
   tipoContrato: TipoContrato;

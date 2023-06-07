@@ -1,5 +1,5 @@
 <div>
-  <h1 mat-dialog-title>Adicionar Contrato de {{modalTitle}}</h1>
+  <h1 mat-dialog-title>Adicionar Contrato</h1>
   <div mat-dialog-content>
     <form [formGroup]="form">
       <div class="input-group my-3">
@@ -16,9 +16,9 @@
         <span class="input-group-text">
         <i class="bi bi-file-plus"></i>
       </span>
-        <select class="form-select" [title]="modalTitle">
-          <option disabled selected>Selecionar {{modalTitle.toLowerCase()}}</option>
-          <option>One</option>
+        <select formControlName="idAgregado" class="form-select" [title]="modalTitle">
+          <option disabled selected>Selecionar</option>
+          <option *ngFor="let options of selectOptions" [value]="options.id">{{options.value}}</option>
         </select>
       </div>
 
@@ -49,7 +49,7 @@
 
   <div mat-dialog-actions>
     <button
-      (click)="saveContato()"
+      (click)="saveContrato()"
       [disabled]="!canSave"
       class="btn btn-dark m-1">
       Salvar

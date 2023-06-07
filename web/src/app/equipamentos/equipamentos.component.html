@@ -1,7 +1,7 @@
 <h2>Equipamentos Cadastrados</h2>
 
 
-<button class="btn btn-success" type="button">
+<button (click)="abrirModalEquipamento()" class="btn btn-success" type="button">
   <i class="bi bi-plus"></i>
   Adicionar novo
 </button>
@@ -10,19 +10,24 @@
   <thead>
   <tr>
     <th scope="col">Nome</th>
-    <th scope="col">Data Inicio Vigencia</th>
-    <th scope="col">Data Fim Vigencia</th>
-    <th scope="col">Tipo</th>
+    <th scope="col">Descrição</th>
+    <th scope="col">Data de Aquisição</th>
     <th scope="col">Ações</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-    <td>@mdo</td>
+  <tr *ngFor="let equipamento of equipamentos">
+    <td>{{equipamento.nome}}</td>
+    <td>{{equipamento.descricao}}</td>
+    <td>{{equipamento.dataAquisicao}}</td>
+    <td>
+      <button (click)="abrirModalEquipamento(equipamento)" class="btn btn-primary m-1" type="button">
+        <i class="bi bi-pencil"></i>
+      </button>
+      <button (click)="deleteEquipamento(equipamento.id)" class="btn btn-danger m-1" type="button">
+        <i class="bi bi-trash3"></i>
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>

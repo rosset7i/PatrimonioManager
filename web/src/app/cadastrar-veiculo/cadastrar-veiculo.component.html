@@ -1,0 +1,49 @@
+<div>
+  <h1 mat-dialog-title>Veiculo</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-car-front-fill"></i>
+      </span>
+        <input class="form-control"
+               formControlName="modelo"
+               placeholder="Modelo do Veículo"
+               type="text">
+      </div>
+
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-calendar"></i>
+      </span>
+        <input class="form-control"
+               formControlName="ano"
+               placeholder="Ano do Veículo"
+               type="number">
+      </div>
+
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-123"></i>
+      </span>
+        <input class="form-control"
+               formControlName="placa"
+               placeholder="Placa do Veículo"
+               type="text">
+      </div>
+
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      (click)="saveVeiculo()"
+      [disabled]="!canSave"
+      class="btn btn-dark m-1">
+      Salvar
+    </button>
+    <button class="btn btn-danger m-1" mat-dialog-close>
+      Cancelar
+    </button>
+  </div>
+</div>

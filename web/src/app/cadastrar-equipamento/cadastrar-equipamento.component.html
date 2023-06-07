@@ -1,0 +1,51 @@
+<div>
+  <h1 mat-dialog-title>Equipamento</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-file-text"></i>
+      </span>
+        <input class="form-control"
+               formControlName="nome"
+               placeholder="Nome do Equipamento"
+               type="text">
+      </div>
+
+      <div class="input-group my-3">
+      <span class="input-group-text">
+        <i class="bi bi-text-center"></i>
+      </span>
+        <input class="form-control"
+               formControlName="descricao"
+               placeholder="Descrição"
+               type="text">
+      </div>
+
+
+      <p>Data de Aquisição</p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-calendar"></i>
+        </span>
+        <input class="form-control"
+               formControlName="dataAquisicao"
+               placeholder="Data De Aquisição"
+               type="date">
+      </div>
+
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <button
+      (click)="saveEquipamento()"
+      [disabled]="!canSave"
+      class="btn btn-dark m-1">
+      Salvar
+    </button>
+    <button class="btn btn-danger m-1" mat-dialog-close>
+      Cancelar
+    </button>
+  </div>
+</div>

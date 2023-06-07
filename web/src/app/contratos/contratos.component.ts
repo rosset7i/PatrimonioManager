@@ -20,12 +20,29 @@ export class ContratosComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  private getData(){
     this.contratoService.getAllContratos()
       .subscribe(response => this.contratos = response);
   }
 
   openCreateModal(modalAction: ModalActions){
-    this.dialog.open(CadastrarContratoModalComponent, { data: modalAction} );
+    this.dialog.open(CadastrarContratoModalComponent, { data: modalAction} )
+      .afterClosed()
+      .subscribe(() => this.getData());
   }
 
+  abrirModalContrato(contrato: ContratoOutput) {
+    this.dialog.open(CadastrarContratoModalComponent, { data: contrato} )
+      .afterClosed()
+      .subscribe(() => this.getData());
+
+  }
+
+  deleteContrato(id: number) {
+    this.contratoService.deleteContrato(id)
+      .subscribe(() => this.getData());
+  }
 }
