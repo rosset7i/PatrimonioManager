@@ -56,7 +56,7 @@ public class ContratoController {
             Optional<Imovel> imovelOptional = imovelRepository.findById(input.getImovel());
             imovelOptional.ifPresent(contrato::setImovel);
         }
-        
+
         return ResponseEntity.created(URI.create("api/v1/contratos"))
                 .body(contratoRepository.save(contrato));
     }
